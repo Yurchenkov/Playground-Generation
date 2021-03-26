@@ -25,7 +25,7 @@ public class PlaygroundController : MonoBehaviour {
     public void SpawnTile() {
         Transform tileTransform = spawnZoneTiles[Random.Range(0, spawnZoneTiles.Count)];
         while (tileTransform.childCount > 0) {
-            if (IsSpawnZoneFilled())
+            if (IsSpawnZoneFilled()) 
                 return;
 
             tileTransform = spawnZoneTiles[Random.Range(0, spawnZoneTiles.Count)];
@@ -49,7 +49,7 @@ public class PlaygroundController : MonoBehaviour {
 
     bool IsSpawnZoneFilled() {
         foreach (Transform tile in spawnZoneTiles) {
-            if (tile.childCount == 0)
+            if (tile.childCount == 0) 
                 return false;
         }
 
@@ -58,9 +58,8 @@ public class PlaygroundController : MonoBehaviour {
 
     public bool IsInSpawnZone(Transform transform) {
         foreach (Transform spawnZoneTile in spawnZoneTiles) {
-            if (spawnZoneTile.position.x == transform.position.x && spawnZoneTile.position.z == transform.position.z) {
+            if (spawnZoneTile.position.x == transform.position.x && spawnZoneTile.position.z == transform.position.z) 
                 return true;
-            }
         }
 
         return false;
